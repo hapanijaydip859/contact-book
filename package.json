@@ -1,0 +1,23 @@
+{
+  "name": "contect",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "address": "^2.0.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "is-mobile": "^4.0.0",
+    "mongoose": "^8.5.2",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.4",
+    "schema-validator": "^3.3.1",
+    "validator": "^13.12.0"
+  }
+}
