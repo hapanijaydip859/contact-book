@@ -41,7 +41,11 @@ let usercontact = new Schema({
     Address_office: {
         type: String,
         unique: true,
+    },
+    userID: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user"
     }
 })
-let  CONTACT = mongoose.model('contact', usercontact)
+let CONTACT = mongoose.model('contact', usercontact)
 module.exports = CONTACT;
