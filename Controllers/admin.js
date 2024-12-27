@@ -1,9 +1,14 @@
 let ADMIN = require('../model/admin');
+let jwt = require('jsonwebtoken')
 
 exports.admincreate =  async function (req, res, next) {
   
     try {
-        let userCreate = await ADMIN.create(req.body)
+      
+      // console.log(req.file.filename);
+      
+      req.body.profile = req.file.filename
+      let userCreate = await ADMIN.create(req.body)
         //   console.log(userCreate);
         res.status(201).json({
           status: "Success",
@@ -22,6 +27,8 @@ exports.admincreate =  async function (req, res, next) {
   exports.adminread = async function (req, res, next) {
     try {
       let userFound = await ADMIN.find()
+      console.log(userFound,"0000");
+      
       res.status(200).json({
         status: "Success",
         message: "user Found Successfull",
@@ -36,16 +43,18 @@ exports.admincreate =  async function (req, res, next) {
   }
 
   exports.adminlogin =  async function (req, res, next) {
-    let { password } = req.body
+    
     try {
       let userLogin = await ADMIN.findOne({ email: req.body.email })
       let userPassword = await ADMIN.findOne({ password: req.body.password })
-      //let passwordc = await bcrypt.compare(password,userLogin.password)
+      console.log(userLogin,userPassword,"}}}}}");
+      
+      // let passwordc = await bcrypt.compare(password,userLogin.password)
   
       if (!userLogin) {
         throw new Error("User Not Found!")
       }
-      if (!password) {
+      if (!userPassword) {
         throw new Error("wrong password")
       }
       res.status(200).json({

@@ -15,7 +15,12 @@ let useradmin = new Schema({
         type: String,
         require: true,
         unique: true
+    },
+    profile : {
+        type : String,
+        required : true
     }
+    
 })
 let LOGIN = mongoose.model('login', useradmin)
 module.exports = LOGIN;

@@ -1,5 +1,5 @@
 let mongoose = require('mongoose');
-const CONTACT = require('./contact');
+// const CONTACT = require('./contact');
 // let validate = require('validator');
 let Schema = mongoose.Schema
 
@@ -23,5 +23,6 @@ let userDatas = new Schema({
         unique: true
     }
 })
+
 let USERS = mongoose.model('user', userDatas)
 module.exports = USERS;

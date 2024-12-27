@@ -5,20 +5,20 @@ let Schema = mongoose.Schema
 let usercontact = new Schema({
     name: {
         type: String,
-        unique: true,
-        require: true
+       
+        
     },
     email: {
         type: String,
-        unique: true,
-        require: true,
+        
+       
         // validate(value) {
         //     if (!validator.isEmail(value)) { throw new Error('invalid Email') }
         // }
     },
     mobile_1: {
         type: Number,
-        min: 10,
+       
         // validate(value) {
         //     if (value.toString().length !== 10) {
         //         throw new Error('Mobile number must be 10 digits');
@@ -27,7 +27,7 @@ let usercontact = new Schema({
     },
     mobile_2: {
         type: Number,
-        min: 10,
+        
         // validate(value) {
         //     if (value.toString().length !== 10) {
         //         throw new Error('Mobile number must be 10 digits');
@@ -36,11 +36,11 @@ let usercontact = new Schema({
     },
     Address: {
         type: String,
-        unique: true,
+      
     },
     Address_office: {
         type: String,
-        unique: true,
+        
     },
     userID: {
         type: mongoose.Schema.Types.ObjectId,

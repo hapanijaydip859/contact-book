@@ -1,15 +1,10 @@
 var express = require('express');
-let CONTACT = require('../model/contact');
-
-var router = express.Router();
 let CC = require("../Controllers/contact")
+let CU = require('../Controllers/index');
+var router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-    res.render('index', { title: 'Express' });
-});
-router.post('/Create', CC.ContactCreate)
-router.get('/Read', CC.ContactRead );
-router.patch('/:id', CC.contactupdate );
-router.delete('/:id', CC.contactdelete);
+router.post('/Create',CC.ContactCreate)
+router.get('/Read',CU.sequre,CC.ContactRead);
+router.patch('/:id',CU.sequre,CC.contactupdate);
+router.delete('/:id',CU.sequre,CC.contactdelete);
 module.exports = router;
